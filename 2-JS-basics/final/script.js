@@ -565,7 +565,7 @@ var John = {
         return this.mass / (this.height * this.height)
     }
 }
-
+ // test
 if (Mark.BMI() > John.BMI()) {
 console.log(Mark.fullName +" : "+ Mark.BMI())
 } else if (Mark.BMI() < John.BMI()) {
@@ -573,6 +573,10 @@ console.log(Mark.fullName +" : "+ Mark.BMI())
 } else {
 console.log("it's a tie!")
 }
+
+// testing 
+ 
+ 
 
 
 
