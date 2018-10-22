@@ -566,10 +566,10 @@ var John = {
     }
 }
 
-if (Mark.BMI > John.BMI) {
-console.log(Mark.fullName +" : "+ Mark.BMI)
-} else if (Mark.BMI < John.BMI) {
-    console.log(Mark.fullName +" : "+ John.BMI)
+if (Mark.BMI() > John.BMI()) {
+console.log(Mark.fullName +" : "+ Mark.BMI())
+} else if (Mark.BMI() < John.BMI()) {
+    console.log(Mark.fullName +" : "+ John.BMI())
 } else {
 console.log("it's a tie!")
 }
