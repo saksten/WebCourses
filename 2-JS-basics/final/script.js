@@ -554,7 +554,7 @@ var Mark = {
     height: 173,
     BMI: function () {
         return this.mass / (this.height * this.height)
-    }
+    } 
 }
 
 var John = {
@@ -693,23 +693,24 @@ Implement a tip calculator using objects and loops:
 
 */
 // Test
-var tipCalculator = {
+var johnsTipCalculator = {
     bills: [123,49,268,180,42],
     tips:[],
     finalAmount:[],
     calculateTip: function() {
         //calculate tip for all the bills 
-
+        for (let index = 0; index < this.bills.length; index++) {
             var percentage;
-            if (bill < 50) {
+            if (this.bills[index] < 50) {
                 percentage = .2;
-            } else if (bill >= 50 && bill < 200) {
+            } else if (this.bills[index] >= 50 && this.bills[index] < 200) {
                 percentage = .15;
             } else {
                 percentage = .1;
             }
-            tips.push(percentage * bill)
-    
+            this.tips.push(percentage * this.bills[index])
+            this.finalAmount.push(this.bills[index]+ this.tips[index])               
+        }            
     }
 }
 
@@ -719,16 +720,65 @@ var tipCalculator = {
 
 
 
-EXTRA AFTER FINISHING: Mark's family also went on a holiday, going to 4 different restaurants. The bills were $77, $375, $110, and $45.
-Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the bill is between $100 and $300, and 25% if the bill is more than $300 (different than John).
+EXTRA AFTER FINISHING: Mark's family also went on a holiday, going to 4 different restaurants. 
+The bills were $77, $375, $110, and $45.
+Mark likes to tip 20% of the bill when the bill is less than $100, 10% when 
+the bill is between $100 and $300, and 25% if the bill is more than $300 (different than John).
 
 5. Implement the same functionality as before, this time using Mark's tipping rules
-6. Create a function (not a method) to calculate the average of a given array of tips. HINT: Loop over the array, and in each iteration store the current sum in a variable (starting from 0). After you have the sum of the array, divide it by the number of elements in it (that's how you calculate the average)
+6. Create a function (not a method) to calculate the average of a given array of tips. 
+    HINT: Loop over the array, and in each iteration store the current sum in a variable (starting from 0). 
+    After you have the sum of the array, divide it by the number of elements in it (that's how you calculate the average)
 7. Calculate the average tip for each family
 8. Log to the console which family paid the highest tips on average
 
 GOOD LUCK 😀
+
+
+
+
 */
+
+var marksTipCalculator = {
+    bills: [77,275,110,45],
+    tips:[],
+    finalAmount:[],
+    calculateTip: function() {
+        //calculate tip for all the bills 
+        for (let index = 0; index < this.bills.length; index++) {
+            var percentage;
+            if (this.bills[index] < 100) {
+                percentage = .2;
+            } else if (this.bills[index] >= 100 && this.bills[index] < 300) {
+                percentage = .10;
+            } else {
+                percentage = .25;
+            }
+            this.tips.push(percentage * this.bills[index])
+            this.finalAmount.push(this.bills[index]+ this.tips[index])               
+        }            
+    }
+}
+
+function avarageTip(tipArray) {
+    var sum = 0;
+    tipArray.forEach(element => {
+        sum += element;
+    });
+    return sum/tipArray.length
+}
+
+johnsTipCalculator.calculateTip()
+marksTipCalculator.calculateTip()
+
+var johnAvarageTip = avarageTip(johnsTipCalculator.tips);
+var marksAvarageTip = avarageTip(marksTipCalculator.tips);
+
+console.log("John's " + johnAvarageTip)
+console.log("Mark's " + marksAvarageTip)
+
+
+
 
 /*
 var john = {
