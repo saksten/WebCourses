@@ -547,7 +547,7 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 GOOD LUCK 😀
 */
 
-
+/*
 var Mark = {
     fullName: "Mark",
     mass: 80,
@@ -577,7 +577,7 @@ console.log("it's a tie!")
 // testing 
  
  
-
+*/
 
 
 
@@ -678,13 +678,45 @@ for (var i = john.length - 1; i >= 0; i--) {
 Remember the tip calculator challenge? Let's create a more advanced version using everything we learned!
 
 This time, John and his family went to 5 different restaurants. The bills were $124, $48, $268, $180 and $42.
-John likes to tip 20% of the bill when the bill is less than $50, 15% when the bill is between $50 and $200, and 10% if the bill is more than $200.
+John likes to tip 20% of the bill when the bill is less than $50, 15% 
+when the bill is between $50 and $200, and 10% if the bill is more than $200.
 
 Implement a tip calculator using objects and loops:
 1. Create an object with an array for the bill values
 2. Add a method to calculate the tip
 3. This method should include a loop to iterate over all the paid bills and do the tip calculations
-4. As an output, create 1) a new array containing all tips, and 2) an array containing final paid amounts (bill + tip). HINT: Start with two empty arrays [] as properties and then fill them up in the loop.
+4. As an output, create 
+    1) a new array containing all tips, and 
+    2) an array containing final paid amounts (bill + tip). 
+            HINT: Start with two empty arrays [] as properties and then fill them up in the loop.
+
+
+*/
+// Test
+var tipCalculator = {
+    bills: [123,49,268,180,42],
+    tips:[],
+    finalAmount:[],
+    calculateTip: function() {
+        //calculate tip for all the bills 
+
+            var percentage;
+            if (bill < 50) {
+                percentage = .2;
+            } else if (bill >= 50 && bill < 200) {
+                percentage = .15;
+            } else {
+                percentage = .1;
+            }
+            tips.push(percentage * bill)
+    
+    }
+}
+
+
+
+/*
+
 
 
 EXTRA AFTER FINISHING: Mark's family also went on a holiday, going to 4 different restaurants. The bills were $77, $375, $110, and $45.
